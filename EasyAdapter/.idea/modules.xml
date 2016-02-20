@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyAdapter.iml" filepath="$PROJECT_DIR$/EasyAdapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easy_adapter/easy_adapter.iml" filepath="$PROJECT_DIR$/easy_adapter/easy_adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easy_recycler_adapter/easy_recycler_adapter.iml" filepath="$PROJECT_DIR$/easy_recycler_adapter/easy_recycler_adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+    </modules>
+  </component>
+</project>

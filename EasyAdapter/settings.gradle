@@ -1,0 +1,1 @@
+include ':example', ':easy_recycler_adapter' , ':easy_adapter'
