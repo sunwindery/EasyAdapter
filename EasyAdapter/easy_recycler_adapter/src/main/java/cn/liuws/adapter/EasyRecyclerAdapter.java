@@ -18,6 +18,7 @@ public abstract class EasyRecyclerAdapter<T> extends RecyclerView.Adapter<EasyRe
      * 对应的layout的xml，如R.layout.XXX
      */
     protected final int[] mItemLayoutIds;
+    private LayoutInflater layoutInflater;
 
     /**
      * 构造方法
@@ -32,7 +33,10 @@ public abstract class EasyRecyclerAdapter<T> extends RecyclerView.Adapter<EasyRe
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(mItemLayoutIds[viewType], parent, false);
+        if (layoutInflater == null) {
+            layoutInflater = LayoutInflater.from(parent.getContext());
+        }
+        View view = layoutInflater.inflate(mItemLayoutIds[viewType], parent, false);
         return new ViewHolder(view);
     }
 

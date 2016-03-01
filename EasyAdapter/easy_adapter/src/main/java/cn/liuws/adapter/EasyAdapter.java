@@ -20,6 +20,7 @@ public abstract class EasyAdapter<T> extends BaseAdapter {
      * 对应的layout的xml，如R.layout.XXX
      */
     protected final int[] mItemLayoutIds;
+    private LayoutInflater layoutInflater;
 
     /**
      * @param mList          list数据
@@ -83,7 +84,10 @@ public abstract class EasyAdapter<T> extends BaseAdapter {
 
     private ViewHolder onCreateViewHolder(int position, ViewGroup parent) {
         int itemViewType = getItemViewType(position);
-        View view = LayoutInflater.from(parent.getContext()).inflate(mItemLayoutIds[itemViewType], parent, false);
+        if (layoutInflater == null) {
+            layoutInflater = LayoutInflater.from(parent.getContext());
+        }
+        View view = layoutInflater.inflate(mItemLayoutIds[itemViewType], parent, false);
         return new ViewHolder(view);
     }
 
