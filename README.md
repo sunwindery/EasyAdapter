@@ -12,8 +12,8 @@ ____
 ```java
 	    EasyAdapter<Bean> myAdapter = new EasyAdapter<Bean>(list, R.layout.left_layout) {
             @Override
-            public void setDataForView(ViewHolder holder, int viewType, Bean item, int position) {
-                ((TextView) holder.getViewById(R.id.left_text)).setText(item.getContent() + position);
+            public void setDataForView(ViewHolder holder, Bean itemData, int position) {
+                ((TextView) holder.getViewById(R.id.left_text)).setText(itemData.getContent() + position);
             }
         };
 ```
@@ -24,7 +24,7 @@ ____
 ```java
 		EasyRecyclerAdapter<Bean> adapter = new EasyRecyclerAdapter<Bean>(list,R.layout.left_layout) {
             @Override
-            public void setDataForView(ViewHolder holder, int viewType, Bean itemData, int position) {
+            public void setDataForView(ViewHolder holder, Bean itemData, int position) {
                 ((TextView)holder.getViewById(R.id.left_text)).setText(itemData.getContent()+position);
             }
         };

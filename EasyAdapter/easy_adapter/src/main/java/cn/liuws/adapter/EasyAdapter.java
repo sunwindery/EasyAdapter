@@ -49,7 +49,7 @@ public abstract class EasyAdapter<T> extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final ViewHolder ViewHolder = getViewHolder(position, convertView, parent);
-        setDataForView(ViewHolder, getItemViewType(position), mList.get(position), position);
+        setDataForView(ViewHolder, mList.get(position), position);
         return ViewHolder.getItemView();
 
     }
@@ -58,11 +58,10 @@ public abstract class EasyAdapter<T> extends BaseAdapter {
      * 设置convertView中子View的内容。<br>
      *
      * @param holder   ViewHolder，可以通过getViewById（R.id.XXX）的方式获取子View
-     * @param viewType 参见{@link #getItemViewType(int, List)}
      * @param itemData List数据中对应项，用于给convertView中各个子View赋值
      * @param position the index of item.
      */
-    public abstract void setDataForView(ViewHolder holder, int viewType, T itemData, int position);
+    public abstract void setDataForView(ViewHolder holder, T itemData, int position);
 
     /**
      * 获取ViewHolder

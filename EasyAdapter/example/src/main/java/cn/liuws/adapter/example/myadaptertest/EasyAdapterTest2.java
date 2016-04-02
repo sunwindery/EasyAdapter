@@ -28,7 +28,7 @@ public class EasyAdapterTest2 extends AppCompatActivity {
         list = new ArrayList<Bean>();
         myAdapter = new EasyAdapter<Bean>(list, R.layout.left_layout, R.layout.right_layout) {
             @Override
-            public void setDataForView(ViewHolder holder, int viewType, Bean item, int position) {
+            public void setDataForView(ViewHolder holder, Bean item, int position) {
                 switch (getItemViewType(position)) {
                     case 0://对应R.layout.left_layout布局
                         ((TextView) holder.getViewById(R.id.left_text)).setText(item.getContent() + position);
@@ -42,7 +42,7 @@ public class EasyAdapterTest2 extends AppCompatActivity {
             @Override
             public int getItemViewType(int position, List<Bean> mList) {
                 //返回值与构造方法中布局文件依次对应（R.layout.left_layout对应0, R.layout.right_layout对应1）。
-                // 在setDataForView（）中通过参数viewType，判断当前使用的是哪个布局的itemView，并做相应的操作。
+                // 通过返回值，判断当前使用的是哪个布局的itemView，并做相应的操作。
                 return mList.get(position).getValueType();
             }
         };

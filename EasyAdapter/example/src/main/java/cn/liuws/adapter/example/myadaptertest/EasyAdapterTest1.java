@@ -27,7 +27,7 @@ public class EasyAdapterTest1 extends AppCompatActivity {
         list = new ArrayList<Bean>();
         myAdapter = new EasyAdapter<Bean>(list, R.layout.left_layout) {
             @Override
-            public void setDataForView(ViewHolder holder, int viewType, Bean item, int position) {
+            public void setDataForView(ViewHolder holder, Bean item, int position) {
                 ((TextView) holder.getViewById(R.id.left_text)).setText(item.getContent() + position);
             }
         };

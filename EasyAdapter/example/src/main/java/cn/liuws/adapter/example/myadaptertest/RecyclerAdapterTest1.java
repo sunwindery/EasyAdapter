@@ -31,7 +31,7 @@ public class RecyclerAdapterTest1 extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         adapter = new EasyRecyclerAdapter<Bean>(list, R.layout.left_layout) {
             @Override
-            public void setDataForView(ViewHolder holder, int viewType, Bean itemData, int position) {
+            public void setDataForView(ViewHolder holder, Bean itemData, int position) {
                 ((TextView) holder.getViewById(R.id.left_text)).setText(itemData.getContent() + position);
             }
         };
